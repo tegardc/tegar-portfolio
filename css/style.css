@@ -237,6 +237,17 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
 .project-body h3 { font-size: 19px; margin-bottom: 6px; }
 .project-body p { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
 .project-meta { font-size: 11.5px; color: #6B7280; }
+.project-foot { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; }
+.project-foot .project-meta { flex: 0 0 auto; }
+.project-card.is-link { cursor: pointer; }
+.project-link {
+  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  font-size: 12.5px; font-weight: 600; color: var(--accent-2);
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.project-link svg { width: 13px; height: 13px; }
+.project-link:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
 
 /* ============ CONTACT ============ */
 .contact { background: var(--bg-2); border-top: 1px solid var(--line); }

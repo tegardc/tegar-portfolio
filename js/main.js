@@ -116,9 +116,15 @@ function step(delta) {
 
 document.querySelectorAll('.project-card').forEach((card) => {
   card.addEventListener('click', (e) => {
-    if (e.target.closest('.project-zoom') || e.target.closest('.project-img')) {
+    // Zoom button → screenshot gallery
+    if (e.target.closest('.project-zoom')) {
       openGallery(card.dataset.gallery);
+      return;
     }
+    // Real links (e.g. "Live Website") handle themselves
+    if (e.target.closest('a')) return;
+    // Clicking the card itself → open the live website
+    if (card.dataset.url) window.open(card.dataset.url, '_blank', 'noopener');
   });
 });
 
