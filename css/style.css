@@ -94,6 +94,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
     radial-gradient(600px 380px at -10% 40%, rgba(34,211,238,.07), transparent 55%);
 }
 .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+/* Grid children must be allowed to shrink below their min-content width,
+   otherwise the terminal's `white-space: pre` code block forces the column
+   wider than the phone viewport and the hero text gets clipped. */
+.hero-grid > *, .about-grid > * { min-width: 0; }
 .eyebrow { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 18px; }
 .eyebrow.light { color: var(--accent-2); }
 .hero-title { font-size: clamp(52px, 7.5vw, 92px); letter-spacing: -0.03em; margin-bottom: 14px; }
@@ -111,7 +115,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
 .hero-socials svg { width: 19px; height: 19px; }
 
 /* Terminal card */
-.hero-visual { position: relative; }
+.hero-visual { position: relative; width: 100%; }
 .terminal {
   border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
   background: #0E1116; box-shadow: var(--shadow);
@@ -226,13 +230,18 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   padding: 6px 13px; border-radius: 999px;
 }
 .project-zoom {
-  position: absolute; right: 14px; bottom: 14px; width: 42px; height: 42px; border-radius: 12px;
+  position: absolute; right: 14px; bottom: 14px; width: 44px; height: 44px; border-radius: 12px;
   border: 1px solid var(--line); background: rgba(11,13,18,.82); color: var(--cream);
   display: grid; place-items: center; opacity: 0; transform: translateY(6px); transition: all .2s ease;
 }
 .project-zoom svg { width: 19px; height: 19px; }
 .project-card:hover .project-zoom { opacity: 1; transform: none; }
 .project-zoom:hover { background: var(--accent); border-color: var(--accent); }
+/* Touch devices have no hover: keep the gallery button permanently visible
+   so the screenshot lightbox stays reachable on phones. */
+@media (hover: none) {
+  .project-zoom { opacity: 1; transform: none; }
+}
 .project-body { padding: 20px 22px 24px; }
 .project-body h3 { font-size: 19px; margin-bottom: 6px; }
 .project-body p { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
@@ -324,6 +333,19 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   .contact-box { padding: 36px 26px; }
   .terminal-body { font-size: 12.5px; padding: 18px 16px 20px; }
   .footer-inner { flex-direction: column; text-align: center; }
+  .stat span { font-size: 12.5px; letter-spacing: .03em; }
+  .section-head { margin-bottom: 34px; }
+  .timeline-card { padding: 22px 20px; }
+}
+/* Touch targets: ≥44px on phones AND touch tablets (hover:none), since a
+   35px pill is a mouse target, not a finger target. */
+@media (hover: none), (max-width: 1024px) {
+  .brand { padding: 8px 0; }
+  .project-link { min-height: 44px; padding: 11px 16px; font-size: 13px; }
+  .to-top { display: inline-block; padding: 12px 6px; }
+  .mobile-menu a { min-height: 48px; display: flex; align-items: center; }
+  /* No hover on touch: the gallery button must stay visible to be tappable */
+  .project-zoom { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
