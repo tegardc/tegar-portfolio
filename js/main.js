@@ -33,7 +33,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 if (typeEl && !reduceMotion) {
   const phrases = [
     { label: 'role', value: 'Backend Developer' },
-    { label: 'stack', value: 'Node.js · Express · SQL' },
+    { label: 'stack', value: 'Laravel · PHP · MySQL' },
     { label: 'passion', value: 'Clean, Scalable APIs' },
   ];
   const render = (p) => {
