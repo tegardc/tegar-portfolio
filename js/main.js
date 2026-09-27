@@ -69,7 +69,7 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
 /* ===== Project gallery (lightbox) ===== */
 const projects = [
   { id: 'up', title: 'Marriage Card', files: ['up1.png', 'up2.png', 'up3.png'] },
-  { id: 'flash', title: 'Flashcard Jepang', files: ['flash1.png', 'flash2.png', 'flash3.png', 'flash4.png'] },
+  { id: 'flash', title: 'Flashcard Jepang', files: ['flash-study.png', 'flash2.png', 'flash3.png', 'flash4.png'] },
   { id: 'fos', title: 'FOS Tattoo', files: ['fos1.png', 'fos2.png', 'fos3.png', 'fos4.png'] },
 ];
 
