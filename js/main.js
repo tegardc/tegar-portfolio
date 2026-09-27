@@ -68,9 +68,9 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
 
 /* ===== Project gallery (lightbox) ===== */
 const projects = [
-  { id: 'work', title: 'SchoolPedia Project', files: ['work1.png', 'work2.png', 'work3.png', 'work4.png'] },
-  { id: 'test', title: 'StoryTime Project', files: ['test1.png', 'test2.png', 'test3.png', 'test4.png'] },
   { id: 'up', title: 'Marriage Card', files: ['up1.png', 'up2.png', 'up3.png'] },
+  { id: 'flash', title: 'Flashcard Jepang', files: ['flash1.png', 'flash2.png', 'flash3.png', 'flash4.png'] },
+  { id: 'fos', title: 'FOS Tattoo', files: ['fos1.png', 'fos2.png', 'fos3.png', 'fos4.png'] },
 ];
 
 const lightbox = document.getElementById('lightbox');
