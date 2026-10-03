@@ -71,6 +71,7 @@ const projects = [
   { id: 'up', title: 'Marriage Card', files: ['up1.png', 'up2.png', 'up3.png'] },
   { id: 'flash', title: 'Flashcard Jepang', files: ['flash-study.png', 'flash2.png', 'flash3.png', 'flash4.png'] },
   { id: 'fos', title: 'FOS Tattoo', files: ['fos1.png', 'fos2.png', 'fos3.png', 'fos4.png'] },
+  { id: 'portal', title: 'Portal Edukasi Jembrana', files: ['portal1.png', 'portal2.png', 'portal3.png'] },
 ];
 
 const lightbox = document.getElementById('lightbox');
